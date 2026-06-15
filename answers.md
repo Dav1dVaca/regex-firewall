@@ -56,3 +56,14 @@ Result:
 
 Explanation:
 The command uses capture groups to extract the date, action and protocol fields and rebuilds the output using backreferences.
+
+## Task 6
+
+Command:
+grep -Ec '^.* ACCEPT TCP .* [0-9]+ 80 [0-9]+$' firewall.log
+
+Result:
+93
+
+Explanation:
+The regex combines ACCEPT, TCP and destination port 80 in a single pattern and anchors the destination port before the final size field.
