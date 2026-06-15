@@ -67,3 +67,14 @@ Result:
 
 Explanation:
 The regex combines ACCEPT, TCP and destination port 80 in a single pattern and anchors the destination port before the final size field.
+
+## Task 7
+
+Command:
+grep -Ec '^[0-9-]+ 0[0-2]:' firewall.log
+
+Result:
+13138
+
+Explanation:
+The range 0[0-2] matches hours 00, 01 and 02. The expression is anchored immediately after the date field.
