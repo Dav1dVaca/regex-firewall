@@ -19,3 +19,14 @@ Result:
 
 Explanation:
 The group (DROP|REJECT) uses alternation to match either blocked action. The spaces ensure the match occurs in the action field.
+
+## Task 3
+
+Command:
+grep -Ec '^[0-9-]+ [0-9:]+ [A-Z]+ [A-Z]+ 11\.' firewall.log
+
+Result:
+33217
+
+Explanation:
+The expression 11\. matches source IP addresses beginning with 11. The dot is escaped so it is treated as a literal period.
