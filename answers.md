@@ -41,3 +41,18 @@ Result:
 
 Explanation:
 The regex [0-9]{7} matches exactly seven digits and the $ anchor ensures that the packet size field is at the end of the line.
+
+## Task 5
+
+Command:
+sed -En 's/^([0-9-]+) [0-9:]+ ([A-Z]+) ([A-Z]+).*/\1 \2 \3/p' firewall.log | head -5
+
+Result:
+2018-05-25 FORWARD TCP
+2018-02-22 FORWARD UDP
+2018-03-20 REJECT UDP
+2018-11-08 REJECT TCP
+2018-07-24 REJECT TCP
+
+Explanation:
+The command uses capture groups to extract the date, action and protocol fields and rebuilds the output using backreferences.
